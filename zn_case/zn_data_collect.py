@@ -97,9 +97,9 @@ def get_sfe_data(src_data: str, dft: bool = False, plane: str | None = None):
 
     return x_values, y_values
 
-# Re-adapted Davide's code for gettin both dft- and ace-generated TS data
+# Re-adapted Davide Fioravanti code for gettin both dft- and ace-generated TS data
 def get_ts_data(plane: str, dft: bool = False):
-    if dft: # TODO: Sistemare nomi variabili e organizzazione codice
+    if dft:
         x_energy_dft = []
         dft_energy = []
 
@@ -154,7 +154,7 @@ def compute_rmspe(dft_curve, ace_curve):
 
     return np.sqrt(np.mean(((ace_curve - dft_curve) / (dft_curve + 1))**2))
 
-# Function to extract the required information from the UBER.xyz file - Davide's code
+# Function to extract the required information from the UBER.xyz file - from Davide Fioravanti code
 def extract_lattice_and_energy(file_path: Path):
     results = []
 
